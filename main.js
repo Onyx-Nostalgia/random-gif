@@ -46,8 +46,7 @@ function grab_data()
     var params = new URLSearchParams(window.location.search);
     var search_term = params.get('q', "technology");
     // set the apikey and limit
-    var apikey = process.env.REACT_APP_TENOR_API_KEY;
-    console.log("SHOW: ",apikey)
+    var apikey = "LIVDSRZULELA"; //test value from https://tenor.com/gifapi/documentation
     var lmt = 1;
 
     // using default locale of en_US
