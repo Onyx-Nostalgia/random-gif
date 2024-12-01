@@ -37,7 +37,7 @@ function tenorCallback_search(responsetext)
     fetch(rand_gif[0]["media"][0]["tinygif"]["url"])
     .then((res) => res.blob())
     .then((myBlob) => {debugger
-       const myFile = new File([myBlob], 'rand.gif', {type: myBlob.type});
+       const myFile = new File([myBlob], './docs/assets/rand.gif', {type: myBlob.type});
     });
 
     return;
