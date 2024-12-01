@@ -20,7 +20,7 @@ jobs:
         npm install
         npm run-script build
       env:
-        TENOR_API_KEY: ${{ secrets.TENOR_API_KEY }}
+        REACT_APP_TENOR_API_KEY: ${{ secrets.REACT_APP_TENOR_API_KEY }}
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
