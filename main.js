@@ -28,17 +28,12 @@ function tenorCallback_search(responsetext)
     // parse the json response
     var response_objects = JSON.parse(responsetext);
 
-    rand_gif = response_objects["results"];
-    var output_img = document.createElement('img');
-    output_img.src = rand_gif[0]["media"][0]["tinygif"]["url"];
-    output_img.alt = rand_gif[0]["content_description"];
-    document.body.appendChild(output_img);
-    // document.body.innerHTML = rand_gif[0]["media"][0]["tinygif"]["url"];
-    fetch(rand_gif[0]["media"][0]["tinygif"]["url"])
-    .then((res) => res.blob())
-    .then((myBlob) => {debugger
-       const myFile = new File([myBlob], './docs/assets/rand.gif', {type: myBlob.type});
-    });
+    rand_gif = response_objects["results"][0]["media"][0]["tinygif"]["url"];
+    // var output_img = document.createElement('img');
+    // output_img.src = rand_gif[0]["media"][0]["tinygif"]["url"];
+    // output_img.alt = rand_gif[0]["content_description"];
+    // document.body.appendChild(output_img);
+    document.body.style.backgroundImage = "url('"+ rand_gif +"')";
 
     return;
 
