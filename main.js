@@ -34,6 +34,11 @@ function tenorCallback_search(responsetext)
     output_img.alt = rand_gif[0]["content_description"];
     document.body.appendChild(output_img);
     // document.body.innerHTML = rand_gif[0]["media"][0]["tinygif"]["url"];
+    fetch(rand_gif[0]["media"][0]["tinygif"]["url"])
+    .then((res) => res.blob())
+    .then((myBlob) => {debugger
+       const myFile = new File([myBlob], 'rand.gif', {type: myBlob.type});
+    });
 
     return;
 
